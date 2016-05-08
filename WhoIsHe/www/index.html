@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; img-src *; style-src 'self' https://www.google.com 'unsafe-inline'; script-src 'self' https://www.google.com 'unsafe-inline' 'unsafe-eval'">
+    <title>WhoIsHe</title>
+
+    <!-- WhoIsHe references -->
+    <link href="css/materialize.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+</head>
+<body ng-class="{'has-translucent-status-bar': window.screen.height === window.innerHeight}">
+    <div class="app">
+        <nav class="brown darken-2">
+            <div class="nav-wrapper brown darken-2">
+                <i class="brand-logo left">Names</i>
+                <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons center">menu</i></a>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a class="names-button link-icon"><i class="material-icons left">fingerprint</i>Names</a></li>
+                    <li><a class="settings-button link-icon"><i class="material-icons left">settings</i>Settings</a></li>
+                    <li><a class="about-button link-icon"><i class="material-icons left">info</i>About</a></li>
+                </ul>
+                <a class="refresh-button main-only link-icon"><i class="material-icons right">refresh</i></a>
+                <!--<a class="search-button main-only link-icon"><i class="material-icons right">search</i></a>-->
+            </div>
+        </nav>
+
+        <div id="names">
+            <div class="loader-container">
+                <div class="preloader-wrapper active">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="feed"></div>
+        </div>
+
+        <div id="settings">
+            <div class="divider"></div>
+            <div class="section">
+                <h5>Notifications</h5>
+                <div class="switch">
+                    <label>
+                        <input id="notification-switch" type="checkbox">
+                        <span class="lever left"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="section">
+                <h5>Time</h5>
+                <div class="switch">
+                    <label>
+                        <input type="time" id="notification-time" disabled>
+                    </label>
+                </div>
+            </div>
+            <div class="divider"></div>
+
+        </div>
+
+        <div id="about">
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/rick.jpg">
+                            <span class="card-title">About</span>
+                        </div>
+                        <a href="#" onclick="cordova.InAppBrowser.open('mailto:rickkhol@gmail.com', '_system');" class="btn-floating btn-large waves-effect waves-light green email-button right"><i class="material-icons">mail</i></a>
+                        <div class="card-content">
+                            <p>
+                                Rick Khol of Wichita, Kansas has worn many hats through the years. He’s the father of eight boys, former missionary to South America, retired science teacher, church elder, foster parent, and Christian camp and conference speaker. Because of his interest in church history, he has a Bible museum in his basement. As Rick progressed in his study of the names of Christ, he felt drawn closer to “Him who is true” and wanted to share this experience with others. Hopefully, this devotional will help to bring others to a deeper relationship to the Lord of Glory.
+                                <br /><br />
+                                <i>- Rick Khol</i>
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" onclick="cordova.InAppBrowser.open('https://whoisheblog.com', '_system');">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>   
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/moment-timezone.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script type="text/javascript" src="js/jsapi"></script>
+    <script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+</body>
+</html>
